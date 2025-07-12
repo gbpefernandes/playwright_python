@@ -50,6 +50,7 @@ async def test_perform_register_and_login():
         #Storing state (cache and origin) for future access
         await context.storage_state(path="state.json")
 
-        #Closing browser
+        #Closing browser and context
+        await context.close()
         await browser.close()
 
