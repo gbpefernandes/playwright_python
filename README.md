@@ -31,6 +31,7 @@ This repository contains:
 - `test_location_emulation.py`: Same as before but covering location emulation and its peculiarities
 - `features\login.feature`: Gherkin test instructions to run a simple login test (check test_bdd.py)
 - `test_bdd.py`: Simple login test using Gherkin instructions inside Features folder
+- `test_api.py`: API request test and validation 
 
 ---
 
@@ -72,7 +73,9 @@ pytest test_login.py --browser chromium --headed
 
 5. `test_location_emulation.py`: Trying out location emulation, which can be very tricky considering you need to send out geolocalization and give the proper permissions to the browser to share the permission. But once done you can simulate users from anywhere on the world, very important on Localization validation
 
-5. `test_bdd.py`: Implementation of a test case written in Gherkin notation, located on features folder, which is translated to Playwright instructions and executed with help of pytest-bdd documentation
+6. `test_bdd.py`: Implementation of a test case written in Gherkin notation, located on features folder, which is translated to Playwright instructions and executed with help of pytest-bdd documentation
+
+7. `test_api.py`: Validation of API request using Playwright, this case sends a get command to a public API and then check it is return and assert if everything went as expected
 
 ## 📄 References
 

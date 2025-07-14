@@ -2,11 +2,11 @@ import pytest
 from pytest_bdd import scenarios, given, when, then
 from playwright.sync_api import sync_playwright
 
-# Import features where the test steps are located
+#Import features where the test steps are located
 scenarios('features/login.feature')
 
-# Shared fixtures, important to initiate browser, context and page considering the text logic will be into Cucumber features
-# Opening browser
+#Shared fixtures, important to initiate browser, context and page considering the text logic will be into Cucumber features
+#Opening browser
 @pytest.fixture(scope="session")
 def browser():
     with sync_playwright() as p:
@@ -14,7 +14,7 @@ def browser():
         yield browser
         browser.close()
 
-# Opening page
+#Opening page
 @pytest.fixture
 def context_page(browser):
     page = browser.new_page()
@@ -22,7 +22,7 @@ def context_page(browser):
     page.close()
 
 
-# Given
+#Given
 @given("I am on the login page")
 def go_to_login(context_page):
     context_page.goto("https://practicetestautomation.com/practice-test-login/") 
