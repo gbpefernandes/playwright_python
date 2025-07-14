@@ -14,6 +14,7 @@ The idea of creating this repository came from reproducing test scripts I had al
 - `pytest` library
 - `asyncio` library (for asyncronous execution)
 - `pytest-playwright` (for Playwright)
+- `pytest-bdd` (for Playwright integration with BDD - Gherkin)
 - `.venv` virtual environment
 - Some other libraries were used but all came as sublibraries from the ones above (requirements.txt)
 
@@ -28,6 +29,8 @@ This repository contains:
 - `test_screenshot.py`: Exploring screenshot method and its usage
 - `test_device_emulation.py`: Test simulating a mobile phone emulation method available on Playwright library
 - `test_location_emulation.py`: Same as before but covering location emulation and its peculiarities
+- `features\login.feature`: Gherkin test instructions to run a simple login test (check test_bdd.py)
+- `test_bdd.py`: Simple login test using Gherkin instructions inside Features folder
 
 ---
 
@@ -69,11 +72,14 @@ pytest test_login.py --browser chromium --headed
 
 5. `test_location_emulation.py`: Trying out location emulation, which can be very tricky considering you need to send out geolocalization and give the proper permissions to the browser to share the permission. But once done you can simulate users from anywhere on the world, very important on Localization validation
 
+5. `test_bdd.py`: Implementation of a test case written in Gherkin notation, located on features folder, which is translated to Playwright instructions and executed with help of pytest-bdd documentation
 
 ## 📄 References
 
 [Udemy course](https://www.udemy.com/course/dominando-o-playwright/)
 
 [Playwright documentation](https://playwright.dev/python/)
+
+[Pytest-bdd documentation](https://pypi.org/project/pytest-bdd/)
 
 [Pytest test runners](https://playwright.dev/python/docs/test-runners)
